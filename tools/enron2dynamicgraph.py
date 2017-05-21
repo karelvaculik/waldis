@@ -70,8 +70,6 @@ def read_email_messages(employees, remove_loops=True):
 
 
 def create_vertices(data):
-    # vertex_list = [Vertex(row['id'], np.array([-np.inf]), np.array([{'rank': row['rank']}]))
-    #                for index, row in data.iterrows()]
     vertex_list = [Vertex(row['id'], {'rank': row['rank']})
                    for index, row in data.iterrows()]
     return vertex_list

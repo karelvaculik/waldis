@@ -14,8 +14,6 @@ input_filename = pkg_resources.resource_filename(__name__, "data_original/dblp/t
 with open(input_filename) as file:
     data = json.load(file)
 
-# all_conferences = set([x[0].split('/')[1] for x in data_original if x[0].startswith('conf')])
-
 # restrict data_original to only these conferences
 selected_confs = ['kdd', 'sigmod', 'www', 'vldb', 'sigir', 'icde', 'cikm', 'icml', 'nips', 'cvpr', 'iccv', 'pkdd', 'ecml', 'ida', 'pakdd', 'sdm']
 restricted_data = [x for x in data if x[0].startswith('conf') and x[0].split('/')[1] in selected_confs]
@@ -48,7 +46,6 @@ def replace_vertices_with_integers(edges):
 
 def create_vertices_from_edges(edges_df):
     all_vertex_ids = np.unique(np.concatenate([edges_df['src'].values, edges_df['dst'].values]))
-    # vertex_list = [Vertex(vertex_id, np.array([-np.inf]), np.array([{'label': 0}])) for vertex_id in all_vertex_ids]
     vertex_list = [Vertex(vertex_id, {'label': 0}) for vertex_id in all_vertex_ids]
     return vertex_list
 
@@ -60,7 +57,7 @@ def create_edges(edges_df):
 
 
 # -------------------------------
-# Data for experiment 1
+# Data for experiment
 # -------------------------------
 
 
@@ -91,7 +88,6 @@ edges = create_edges(exp_1_edges)
 dynamic_graph = DynamicGraph(vertices=vertices, edges=edges, vertex_schema=[],
                              edge_schema=[("label", AttributeType.NOMINAL)], undirected=True)
 
-# dynamic_graph.to_json_file("dblp_graph_exp1.json")
 dynamic_graph.to_json_file("data_graphs/dblp_graph_exp1.json.gz", gz=True)
 
 
