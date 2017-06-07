@@ -8,9 +8,7 @@ An algorithm for mining discriminative patterns in dynamic graphs.
 pip3 install .
 ```
 
-- tested with Python 3
-- needs setuptools
-- may need other libraries (such as python3-dev)
+(tested with Python 3)
 
 ## Example
 
