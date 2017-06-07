@@ -2,10 +2,10 @@
 
 An algorithm for mining discriminative patterns in dynamic graphs.
 
-## Installation
+## Installation (from the project directory)
 
 ```sh
-python3 setup.py install
+pip3 install .
 ```
 
 - tested with Python 3
