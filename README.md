@@ -76,6 +76,7 @@ python3 scripts/enron_experiments.py
 ## Results of IDA 2017 experiments
 
 - graphs can be found in `experiments` directory
+- NOTE: your graphs may look different when running the experiment scripts as there is no fixed order of barchart groups (the colors of the groups are not fixed either)
 
 ## Data preprocessing for IDA 2017 experiments
 
