@@ -57,7 +57,7 @@ pattern.pattern_timestamps
 pattern.pattern_scores
 ```
 
-## Experiments for IDA 2017 paper
+## Experiments for IDEAS 2018 paper
 
 - DBLP dataset:
 
@@ -73,12 +73,12 @@ python3 scripts/enron_experiments.py
 
 - Telco dataset - unfortunately, this dataset cannot be published
 
-## Results of IDA 2017 experiments
+## Results of IDEAS 2018 experiments
 
 - graphs can be found in `experiments` directory
 - NOTE: your graphs may look different when running the experiment scripts as there is no fixed order of barchart groups (the colors of the groups are not fixed either)
 
-## Data preprocessing for IDA 2017 experiments
+## Data preprocessing for IDEAS 2018 experiments
 
 - scripts used for preparation of networks can be found in `tools` directory
 - resulting networks are located in the `data_graphs` directory

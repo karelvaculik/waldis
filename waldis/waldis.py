@@ -54,8 +54,10 @@ def evaluate_pattern(graph, pattern, positive_vertex_ids_test, positive_starting
     for i in range(len(positive_vertex_ids_test[0])):
         score = check_pattern_in_instance(graph, pattern.pattern_edges, pattern.pattern_attributes,
                                           pattern.pattern_timestamps, pattern.pattern_directions,
-                                          starting_vertices=positive_vertex_ids_test[0][i:(i + 1)],
-                                          checked_timestamp=positive_starting_times_test[i:(i + 1)],
+                                          # starting_vertices=positive_vertex_ids_test[0][i:(i + 1)],
+                                          # checked_timestamp=positive_starting_times_test[i:(i + 1)],
+                                          graph_starting_vertices=positive_vertex_ids_test[:, i],
+                                          graph_starting_timestamp=positive_starting_times_test[i],
                                           secondary_time_unit=time_unit_secondary,
                                           edge_weights=np.array(pattern.pattern_scores) / sum(pattern.pattern_scores),
                                           num_of_random_walks=random_walks)
@@ -64,8 +66,10 @@ def evaluate_pattern(graph, pattern, positive_vertex_ids_test, positive_starting
     for i in range(len(negative_vertex_ids_test[0])):
         score = check_pattern_in_instance(graph, pattern.pattern_edges, pattern.pattern_attributes,
                                           pattern.pattern_timestamps, pattern.pattern_directions,
-                                          starting_vertices=negative_vertex_ids_test[0][i:(i + 1)],
-                                          checked_timestamp=negative_starting_times_test[i:(i + 1)],
+                                          # starting_vertices=negative_vertex_ids_test[0][i:(i + 1)],
+                                          # checked_timestamp=negative_starting_times_test[i:(i + 1)],
+                                          graph_starting_vertices=negative_vertex_ids_test[:, i],
+                                          graph_starting_timestamp=negative_starting_times_test[i],
                                           secondary_time_unit=time_unit_secondary,
                                           edge_weights=np.array(pattern.pattern_scores) / sum(pattern.pattern_scores),
                                           num_of_random_walks=random_walks)
