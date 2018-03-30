@@ -83,5 +83,7 @@ python3 scripts/enron_experiments.py
 - scripts used for preparation of networks can be found in `tools` directory
 - resulting networks are located in the `data_graphs` directory
 - the original data are not part of this project and have to be downloaded from the relevant web pages
-- Enron original dataset was downloaded from http://www.cis.jhu.edu/~parky/Enron/
+- Enron original dataset was downloaded from http://www.cis.jhu.edu/~parky/Enron/, specifically you need the following files in the data_original/enron directory:
+  - execs.email.linesnum.ldctopic
+  - employees.txt
 - DBLP original dataset was downloaded from http://dblp.uni-trier.de/xml/ and DBLP2json.py from http://projects.csail.mit.edu/dnd/DBLP/ was used for initial data extraction
