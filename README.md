@@ -59,6 +59,10 @@ pattern.pattern_scores
 
 ## Experiments for IDEAS 2018 paper
 
+- although the original data is not present in this project,
+prepared dynamic graphs can be found in `data_graphs` directory and the experiments
+can be run in the following way:
+
 - DBLP dataset:
 
 ```sh
@@ -75,15 +79,34 @@ python3 scripts/enron_experiments.py
 
 ## Results of IDEAS 2018 experiments
 
-- graphs can be found in `experiments` directory
-- NOTE: your graphs may look different when running the experiment scripts as there is no fixed order of barchart groups (the colors of the groups are not fixed either)
+- final graph patterns from all experiments can be found in `experiments` directory
+- the following attributes can be found for each pattern:
+    - DATA - name of the dataset
+    - TOTAL_TIME - running time in seconds
+    - TIME_UNIT_PRIMARY - primary time unit parameter
+    - TIME_UNIT_SECONDARY - secondary time unit parameter
+    - RANDOM_WALKS - number of random walks
+    - PROB_RESTART - probability of restart
+    - MAX_PATTERN_EDGES - maximum number of pattern edges to be found
+    - EVALUATION_RANDOM_WALKS - number of random walks used for evaluation
+    - TEST_EVALUATION_POSITIVE - matching scores on positive events from test set 
+    - TEST_EVALUATION_NEGATIVE - matching scores on negative events from test set
+    - PATTERN_EDGES - list of pattern edges in the form of (source_vertex, destination_vertex)
+    - PATTERN_SCORES - scores of pattern edges
+    - PATTERN_TIMESTAMPS - distribution of relative timestamps for each pattern edge
+    - PATTERN_ATTRIBUTES - distribution of attributes for each pattern edge
+    - PATTERN_DIRECTIONS - True = edge directed from source to destination, False = the opposite direction; makes sense only for directed graph
+    - PATTERN_UNDIRECTED - whether the patten is an undirected graph
+
 
 ## Data preprocessing for IDEAS 2018 experiments
 
 - scripts used for preparation of networks can be found in `tools` directory
 - resulting networks are located in the `data_graphs` directory
 - the original data are not part of this project and have to be downloaded from the relevant web pages
-- Enron original dataset was downloaded from http://www.cis.jhu.edu/~parky/Enron/, specifically you need the following files in the data_original/enron directory:
-  - execs.email.linesnum.ldctopic
-  - employees.txt
-- DBLP original dataset was downloaded from http://dblp.uni-trier.de/xml/ and DBLP2json.py from http://projects.csail.mit.edu/dnd/DBLP/ was used for initial data extraction
+- Enron original dataset was downloaded from http://www.cis.jhu.edu/~parky/Enron/,
+specifically you need the following files in the `data_original/enron` directory:
+  - `execs.email.linesnum.ldctopic`
+  - `employees.txt`
+- DBLP original dataset was downloaded from http://dblp.uni-trier.de/xml/ and `DBLP2json.py`
+from http://projects.csail.mit.edu/dnd/DBLP/ was used for initial data extraction
