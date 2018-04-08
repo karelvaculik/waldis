@@ -1,6 +1,7 @@
 # WalDis
 
 An algorithm for mining discriminative patterns in dynamic graphs.
+It was presented as a work-in-progress poster at MEMICS 2017 conference and submitted as a full-length paper to IDEAS 2018 conference.
 
 ## Installation (from the project directory)
 
